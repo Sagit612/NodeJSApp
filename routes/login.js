@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 var authen = require('../model/authenticated')
-
+var getTable = require('../model/tableDisplay')
 /* GET login listing. */
 router.get('/', function(req, res, next) {
-  res.render('login');
+  res.render('login', {message: 'Login'});
 });
 
 router.post('/', async function(req, res, next) {
@@ -12,9 +12,15 @@ router.post('/', async function(req, res, next) {
     var passwd = req.body.password
     var auth = await authen(uname, passwd)
     if (auth==true){
-      res.render('user.ejs', {message: 'hello'})
+      var tableString = await getTable(uname)
+      // console.log(tableString.rows[0].role)
+      res.render('user.ejs', 
+      {
+        message: 'Login successfully',
+        table: tableString
+      })
     }else{
-      res.send('123')
+      res.render('login', {message: 'wrong username and password, please enter again'})
     }
 });
 
