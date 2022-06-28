@@ -27,10 +27,15 @@ async function getTable (user){
             var cell = "<td>" + rowData[fieldIndex] + "</td>" 
             bodyTable+=cell 
         }
-        bodyTable = "<tr>" + "<td>" + "CRUD" + "</td>"
+        bodyTable = bodyTable + "<td>" + "<a href='/edit'>Edit</a> / <a href='/delete'>Delete</a>" + "</td>" 
         bodyTable+="</tr>"
         stringTable+= bodyTable
     }
+    stringTable += "<tr>"
+    for(let headerIndex in headerData){
+        stringTable += "<td> </td>"
+    }
+    stringTable += "<td> <a href='add.ejs'>Add</a> </td> </tr>"
     stringTable+= "</table>"
     console.log(stringTable)
     return stringTable;
