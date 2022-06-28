@@ -29,7 +29,6 @@ async function getTable (user){
         bodyTable+="</tr>"
         stringTable+= bodyTable
     }
-
     stringTable+= "</table>"
     console.log(stringTable)
     return stringTable;
