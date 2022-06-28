@@ -16,16 +16,15 @@ async function getTable (user){
     var stringTable = "<table><tr>"
     var headerData = Object.keys(dataTable[0])
     for(let headerIndex in headerData){
-        var header = "<th>" + headerData[headerIndex] + "</th>" + 
-        "<br>" + "<th>" + "Crud" + "</th>"
-        stringTable+=header
+        var header = "<th>" + headerData[headerIndex] + "</th>"
+        stringTable+=header + "<br>" + "<th>" + "Crud" + "</th>"
     }
     for(let rowIndex in dataTable){
         var bodyTable = "<tr>" 
         rowData = dataTable[rowIndex]
         for(let fieldIndex in rowData){
-            var cell = "<td>" + rowData[fieldIndex] + "</td>" +  "<br>" + "<td>" + "Crud" + "</td>"
-            bodyTable+=cell
+            var cell = "<td>" + rowData[fieldIndex] + "</td>" 
+            bodyTable+=cell +  "<br>" + "<td>" + "Crud" + "</td>"
         }
         bodyTable+="</tr>"
         stringTable+= bodyTable
