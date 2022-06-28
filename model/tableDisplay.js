@@ -7,11 +7,18 @@ async function getTable (user){
     }
     var query_data = await pg_connection.query(acc_query)
     var role = query_data.rows[0].role
-    const products_query = {
-        text: 'select * from products where shop = $1',
-        values: [role]
+    let table_query = {}
+    if(role == 'boss'){
+        table_query = {
+            text: 'select * from products'
+        }
+    }else{
+        table_query = {
+            text: 'select * from products where shop = $1',
+            values: [role]
+        }
     }
-    query_data = await pg_connection.query(products_query)
+    query_data = await pg_connection.query(table_query)
     var dataTable = query_data.rows
     var stringTable = "<table><tr>"
     var headerData = Object.keys(dataTable[0])
