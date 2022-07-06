@@ -34,7 +34,7 @@ router.post('/add',async (req,res,next)=>{
   await addAction(req.body)
   var tableString = await getTable(user)
   res.render('user', {
-    message: "Welcome to ATN\n",
+    message: "Added Successfully\n",
     table: tableString
    })
 })
@@ -45,7 +45,7 @@ router.get('/delete', async (req,res,next)=>{
   await deleteAction(id)
   var tableString = await getTable(user)
   res.render('user', {
-      message: "Welcome to ATN\n",
+      message: "Deleted Successfully\n",
       table: tableString
      })
 })
@@ -56,7 +56,7 @@ router.post('/edit', async (req,res,next)=>{
   await editAction(id, req.body)
   var tableString = await getTable(user)
   res.render('user', {
-    message: "Welcome to ATN\n",
+    message: "Edited Successfully\n",
     table: tableString
    })
 })

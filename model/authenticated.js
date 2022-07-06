@@ -7,6 +7,7 @@ async function authen (user, pass){
         values: [user, pass]
     }
     var query_data = await pg_connection.query(acc_query)
+    console.log(query_data)
     if(query_data.rows.length==1){
         authenticated = true
     }

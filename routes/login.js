@@ -4,7 +4,7 @@ var router = express.Router();
 // var getTable = require('../model/tableDisplay')
 /* GET login listing. */
 router.get('/', function(req, res, next) {
-  res.render('login', {message: 'Login'});
+  res.render('login', {message: 'THIS IS LOGIN PAGE, please login!!!'});
 });
 
 // router.post('/', async function(req, res, next) {
