@@ -50,9 +50,8 @@ router.get('/delete', async (req,res,next)=>{
      })
 })
 router.post('/edit', async (req,res,next)=>{
-  console.log(req.body)
+  id = req.body.id
   const queryObject = url.parse(req.url, true).query
-  var id = parseInt(queryObject['id'])
   var user = queryObject['user']
   await editAction(id, req.body)
   var tableString = await getTable(user)

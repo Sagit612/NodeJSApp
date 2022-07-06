@@ -48,7 +48,7 @@ async function getTable (user){
         stringTable += `<td><input type='text' name='${headerData[headerIndex]}'></td>`
     }
     stringTable += "<td> <button type='submit'>Add</button> </td> </form></tr>"
-    stringTable += `<tr> <form action='/users/edit${get_query}' method='post'>`
+    stringTable += `<tr> <form action='/users/edit?user=${user}' method='post'>`
     for(let headerIndex in headerData){
         stringTable += `<td><input type='text' name='${headerData[headerIndex]}'></td>`
     }

@@ -14,7 +14,7 @@ async function EditFunction(id, body)
         var nameOfValue = headerData[headerIndex] // name of header
         // body[nameOfValue] is data entered
         if(isNaN(body[nameOfValue])){
-            var fieldName = nameOfValue + " = '" + body[nameOfValue] + "'"
+            var fieldName = nameOfValue + "='" + body[nameOfValue] + "'"
         }else{
             fieldName = nameOfValue + "=" +body[nameOfValue]
         }
