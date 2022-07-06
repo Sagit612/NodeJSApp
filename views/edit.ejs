@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>Example Login Form</title>
+  </head>
+  <%- message %>
+  <body>
+	<form action="/users" method="post">
+  	<!-- user input-->
+  	Id:<br>
+  	<p name="id"><%= id %></p><br><br>
+  	Name:<br>
+  	<input type="text" name="name" placeholder="<%= name %>" required><br><br>
+    Price:<br>
+  	<input type="text" name="price" placeholder="<%= price %>" required><br><br>
+    Quantity:<br>
+  	<input type="text" name="quantity" placeholder="<%= quantity %>" required><br><br>
+    Shop:<br>
+  	<input type="text" name="shop" placeholder="<%= shop %>" required><br><br>
+  	<!-- submit button -->
+  	<input type="submit" value="edit">
+	</form>
+  </body>
+</html>
