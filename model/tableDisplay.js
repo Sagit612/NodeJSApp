@@ -29,7 +29,6 @@ async function getTable (user){
     stringTable += "<th> Delete </th></tr></thead><tbody>"; 
     for(let rowIndex in dataTable){
         rowData = dataTable[rowIndex]
-
         id_product = rowData[Object.keys(rowData)[0]]
         var get_query = "?id=" + id_product + "&user="+ user 
         var bodyTable = `<tr>`
