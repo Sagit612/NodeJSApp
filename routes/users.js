@@ -30,6 +30,7 @@ router.post('/', async function(req, res, next) {
 router.post('/add',async (req,res,next)=>{
   console.log(req.body)
   const queryObject = url.parse(req.url, true).query
+  console.log(queryObject)
   var user = queryObject['user']
   await addAction(req.body)
   var tableString = await getTable(user)
